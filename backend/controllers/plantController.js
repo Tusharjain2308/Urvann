@@ -118,24 +118,27 @@ const getPlantById = async (req, res) => {
 const searchPlants = async (req, res) => {
   try {
     const { name, category } = req.query;
-    let orConditions = [];
+
+    let conditions = {};
 
     if (name) {
-      orConditions.push({ name: { $regex: name, $options: "i" } });
+      conditions.name = { $regex: name, $options: "i" };
     }
 
     if (category) {
-      orConditions.push({ categories: { $regex: category, $options: "i" } });
+      // category must match at least one inside categories array
+      conditions.categories = { $regex: new RegExp(category, "i") };
     }
 
-    const plants = await Plant.find(
-      orConditions.length > 0 ? { $or: orConditions } : {}
-    );
+    const plants = await Plant.find(conditions);
     res.json(plants);
+    console.log("Plants fetched:", plants);
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Error fetching plants", error: error.message });
+    console.error("Error fetching plants:", error);
+    res.status(500).json({
+      message: "Error fetching plants",
+      error: error.message,
+    });
   }
 };
 

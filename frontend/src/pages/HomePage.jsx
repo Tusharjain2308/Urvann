@@ -1,28 +1,36 @@
-import { Button } from "../components/ui/Button.jsx"
-import { Leaf } from "lucide-react"
+import { Link } from "react-router-dom";
+import { Button } from "../components/ui/Button.jsx";
+import { Leaf } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-accent/5 flex items-center justify-center p-4">
-      <div className="text-center space-y-6">
-        <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-4 shadow-lg">
-          <Leaf className="w-10 h-10 text-primary-foreground" />
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-100 to-green-200 flex items-center justify-center p-4">
+      <div className="text-center space-y-6 max-w-lg">
+        {/* Logo */}
+        <div className="inline-flex items-center justify-center w-24 h-24 bg-green-500 rounded-full mb-4 shadow-lg">
+          <Leaf className="w-12 h-12 text-white" />
         </div>
-        <h1 className="text-4xl font-serif font-bold text-foreground">Welcome to Urvann</h1>
-        <p className="text-xl text-muted-foreground max-w-md">
-          Your botanical paradise awaits. Discover the perfect plants for your space.
+
+        {/* Heading */}
+        <h1 className="text-5xl font-bold text-green-900">Welcome to Urvann</h1>
+        <p className="text-lg text-green-800">
+          Your botanical paradise awaits. Browse and order the perfect plants for your space.
         </p>
-        <div className="space-y-4">
-          <a href="/auth">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 transition-all duration-200 hover:scale-105 shadow-lg"
-            >
-              Get Started
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-4">
+          <Link to="/auth/user">
+            <Button className="bg-green-500 hover:bg-green-600 text-white transition-all">
+              User Login / Register
             </Button>
-          </a>
+          </Link>
+          <Link to="/auth/admin">
+            <Button className="bg-yellow-500 hover:bg-yellow-600 text-white transition-all">
+              Admin Login
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }
