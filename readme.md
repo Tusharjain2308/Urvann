@@ -1,44 +1,57 @@
-# AI-Powered Meeting Notes Summarizer
+# Plant Catalog System
 
 ## 📌 Project Overview
-This project is an **AI-powered meeting notes summarizer and sharer**, built as a **full-stack MERN project**.  
-The goal is to allow users to **upload a transcript (text/PDF)** and provide a **custom instruction or prompt** (e.g., *"Summarize in bullet points for executives"* or *"Highlight only action items"*).  
+This project is a Plant Catalog Management System, built as a full-stack MERN project.
+The goal is to allow users to explore plant categories and details, while admins can manage the catalog via a secure dashboard.
 
-After clicking **Generate Summary**, the system calls the **Gemini API** to generate a structured summary as per the user’s instruction.  
-You can then **edit the generated summary** directly in the interface and **share it via email with a single click**.
+It includes role-based authentication so that only admins can add/edit plants, and users can browse seamlessly.
 
 ---
 
 ## ⚙️ Features
-- 📄 Upload **meeting transcripts** (Text or PDF format).  
-- 📝 Provide **custom instructions** (executive summary, action items, etc.).  
-- 🤖 Generate **AI-powered summaries** using Gemini API.  
-- ✏️ **Edit the generated summary** before finalizing.  
-- 📧 **Share the summary via email** with a single click.  
-- ⚡ No history or database storage — a **stateless system**.  
+🔐 Authentication & Authorization using JWT.
+
+👥 Role-based access control (User / Admin).
+
+🌿 Browse plants with categories and details.
+
+📊 Admin dashboard for managing catalog.
+
+🚪 Secure login/logout with session persistence.
+
+📱 Responsive UI with Tailwind CSS.
 
 
 ---
 
 ## 🚀 Tech Stack
-- **Backend:** Node.js, Express.js  
-- **Middleware:** Multer (for handling file uploads)  
-- **AI Integration:** Gemini API  
-- **Frontend:** React.js, Tailwind CSS, Shadcn, Vo.dev  
+- **Frontend:** React.js, Tailwind CSS, Shadcn
+- **Backend:** Node.js, Express.js, MongoDB
+- **Auth:** JWT-based Authentication, Role-based Access 
 
 ---
 
 ## ▶️ Live Link
-🔗 [AI Meeting Notes Summarizer](https://meeting-notes-mu.vercel.app/)
+🔗 [Plant Catalog System](https://urvann-1-3wx3.onrender.com/auth)
 
 ---
+## 🔑 Test Credentials
+You can use the following test accounts to explore the system:
 
-## 📚 Future Enhancements
-- ✅ Add support for more file formats (DOCX, CSV)  
-- ✅ Export summary as **PDF/Word**  
-- ✅ Integration with **Slack / MS Teams** for direct sharing  
+👨‍💼 Admin Account
+```json
+{
+  email: admin@gmail.com,
+  password: testAdmin,
+}
 
----
+👤 User Account
+{
+  email: user@gmail.com,
+  password: testUser,
+}
+```
+⚠️ Note: If authentication doesn’t work the first time, please enter the credentials twice to log in successfully.
 
 ## 👨‍💻 Author
 Developed by **Tushar Jain**
