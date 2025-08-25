@@ -41,14 +41,14 @@ You can use the following test accounts to explore the system:
 👨‍💼 Admin Account
 ```json
 {
-  email: admin@gmail.com,
-  password: testAdmin,
+  "email": "admin@gmail.com",
+  "password": "testAdmin"
 }
 
 👤 User Account
 {
-  email: user@gmail.com,
-  password: testUser,
+  "email": "user@gmail.com",
+  "password": "testUser"
 }
 ```
 ⚠️ Note: If authentication doesn’t work the first time, please enter the credentials twice to log in successfully.
