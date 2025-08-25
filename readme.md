@@ -44,7 +44,8 @@ You can use the following test accounts to explore the system:
   "email": "admin@gmail.com",
   "password": "testAdmin"
 }
-
+```
+```
 👤 User Account
 {
   "email": "user@gmail.com",
